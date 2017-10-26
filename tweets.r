@@ -1,4 +1,4 @@
-setwd('C:/Users/Bensabat Elliot/Desktop/BCGTweets')
+setwd('C:/Users/Bensabat Elliot/Desktop/tweets')
 library(base64enc)
 library(httr)
 library(RCurl)
@@ -24,9 +24,9 @@ refresh <- function() {
   accessURL         <- "https://api.twitter.com/oauth/access_token"
   authURL           <- "https://api.twitter.com/oauth/authorize"
   consumerKey       <- "DYptuYXGNGMPrgF1fsIytrDjn"
-  consumerSecret    <- 	"buqLMOXcAdNzeQufRCxPxtrluTBtjC6Lqvhp5A5ipGJHqJ9wdm"
-  accessToken       <- 	"422129445-MI7hY2VduxmeNpQsA8aVdANyjFJAJmPfASAktQDZ"
-  accessTokenSecret <- "W1RbVDTZrx6kxEfkVbygAisRo79WEtHkK9dVkPSRTW4Cc"
+  consumerSecret    <- 	'XXX'
+  accessToken       <- 	'XXX'
+  accessTokenSecret <- 'XXX'
   
   #obtain oauth by handshaking and save the oauth to the local disk for future connections
   #my_oauth <- OAuthFactory$new( consumerKey=consumerKey,
@@ -40,7 +40,7 @@ refresh <- function() {
   
   setup_twitter_oauth(consumerKey, consumerSecret, accessToken, accessTokenSecret)
   
-  x <- searchTwitter("@BCG",1000)
+  x <- searchTwitter("Topic",1000)
   y <<- twListToDF(x)
 }
 
